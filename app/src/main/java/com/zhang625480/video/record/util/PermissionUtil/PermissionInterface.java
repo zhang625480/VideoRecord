@@ -29,7 +29,8 @@ public interface PermissionInterface {
 
     /**
      * 请求权限失败回调
-     * @param permission 失败的权限
+     *
+     * @param permission  失败的权限
      * @param isShowAgain 是否勾选不再显示 false 勾选   true 未勾选
      */
     void requestPermissionsFail(String permission, boolean isShowAgain);

@@ -33,7 +33,7 @@ import java.io.File;
 /**
  * 视频拍摄页面
  */
-public class RecordVideoActivity extends Activity implements View.OnClickListener,PermissionInterface {
+public class RecordVideoActivity extends Activity implements View.OnClickListener, PermissionInterface {
     private static final String LOG_TAG = "RecordVideoActivity";
     private static final int REQ_CODE = 110;
     private static final int RES_CODE = 111;
@@ -144,7 +144,7 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
                     movieRecorderView.record(new MovieRecorderView.OnRecordFinishListener() {
                         @Override
                         public void onRecordFinish() {
-                            if(!isSendMessage){
+                            if (!isSendMessage) {
                                 handler.sendEmptyMessage(RECORD_FINISH);
                             }
                             isSendMessage = true;
@@ -161,7 +161,7 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
                     } else {
                         if (movieRecorderView.getTimeCount() > 3) {//录制时间超过三秒，录制完成
 
-                            if(!isSendMessage){
+                            if (!isSendMessage) {
                                 handler.sendEmptyMessage(RECORD_FINISH);
                             }
                             isSendMessage = true;
@@ -247,7 +247,7 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onDestroy() {
-        if(null!=movieRecorderView){
+        if (null != movieRecorderView) {
             if (movieRecorderView.getRecordFile() != null) {
                 File file = new File(movieRecorderView.getRecordFile().getAbsolutePath());
                 if (file != null && file.exists()) {
@@ -306,7 +306,7 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
 
     @Override
     public String[] getPermissions() {
-        return new String[]{Manifest.permission.CAMERA,Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        return new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     }
 

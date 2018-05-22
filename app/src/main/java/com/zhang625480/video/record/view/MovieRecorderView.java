@@ -205,7 +205,7 @@ public class MovieRecorderView extends LinearLayout implements OnErrorListener {
         float tmp = 0f;
         float minDiff = 100f;
         //TODO 高宽比率3:4，且最接近屏幕宽度的分辨率，可以自己选择合适的想要的分辨率
-        float ratio = ((float)((VideoRecordApplication) context.getApplicationContext()).screenWidth) / (float)((VideoRecordApplication) context.getApplicationContext()).screenHeight;
+        float ratio = ((float) ((VideoRecordApplication) context.getApplicationContext()).screenWidth) / (float) ((VideoRecordApplication) context.getApplicationContext()).screenHeight;
         Camera.Size best = null;
         for (Camera.Size s : previewSizes) {
             tmp = Math.abs(((float) s.height / (float) s.width) - ratio);
@@ -263,7 +263,7 @@ public class MovieRecorderView extends LinearLayout implements OnErrorListener {
 
         float tmp = 0f;
         float minDiff = 100f;
-        float ratio = (float)((VideoRecordApplication) context.getApplicationContext()).screenWidth / (float)((VideoRecordApplication) context.getApplicationContext()).screenHeight;//高宽比率3:4，且最接近屏幕宽度的分辨率
+        float ratio = (float) ((VideoRecordApplication) context.getApplicationContext()).screenWidth / (float) ((VideoRecordApplication) context.getApplicationContext()).screenHeight;//高宽比率3:4，且最接近屏幕宽度的分辨率
         Camera.Size best = null;
         for (Camera.Size s : previewSizes) {
             tmp = Math.abs(((float) s.height / (float) s.width) - ratio);
