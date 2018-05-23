@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +47,6 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
 
     private MovieRecorderView movieRecorderView;
     private Button buttonShoot;
-    private RelativeLayout rlBottomRoot;
     private ProgressBar progressVideo;
     private TextView textViewCountDown;
     private TextView textViewUpToCancel;//上移取消
@@ -115,7 +113,6 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
         setContentView(R.layout.activity_record_video);
         movieRecorderView = (MovieRecorderView) findViewById(R.id.movieRecorderView);
         buttonShoot = (Button) findViewById(R.id.button_shoot);
-        rlBottomRoot = (RelativeLayout) findViewById(R.id.rl_bottom_root);
         progressVideo = (ProgressBar) findViewById(R.id.progressBar_loading);
         textViewCountDown = (TextView) findViewById(R.id.textView_count_down);
         textViewCountDown.setText("00:00");

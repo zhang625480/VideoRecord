@@ -35,7 +35,6 @@ import java.util.TimerTask;
 
 /**
  * 视频播放控件
- * Created by Wood on 2016/4/6.
  */
 public class MovieRecorderView extends LinearLayout implements OnErrorListener {
     private static final String LOG_TAG = "MovieRecorderView";
@@ -56,7 +55,7 @@ public class MovieRecorderView extends LinearLayout implements OnErrorListener {
     private int recordMaxTime;//最长拍摄时间
     private int timeCount;//时间计数
     private File recordFile = null;//视频文件
-    private long sizePicture = 0;
+    private int sizePicture = 0;
     private boolean isFacingFront = false;//默认开启前置摄像头
 
     public MovieRecorderView(Context context) {
@@ -168,6 +167,7 @@ public class MovieRecorderView extends LinearLayout implements OnErrorListener {
         if (camera != null) {
             Parameters params = camera.getParameters();
             params.set("orientation", "portrait");
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);//自动聚焦
             List<Camera.Size> supportedPictureSizes = params.getSupportedPictureSizes();
             for (Camera.Size size : supportedPictureSizes) {
                 sizePicture = (size.height * size.width) > sizePicture ? size.height * size.width : sizePicture;
@@ -336,10 +336,10 @@ public class MovieRecorderView extends LinearLayout implements OnErrorListener {
 //        LogUtil.e(LOG_TAG,"手机支持的最大像素supportedPictureSizes===="+sizePicture);
         if (sizePicture <= 3 * 1024 * 1024) {//这里设置可以调整清晰度
             mediaRecorder.setVideoEncodingBitRate(3 * 1024 * 1024);
-        } else if (sizePicture <= 4 * 1024 * 1024) {
-            mediaRecorder.setVideoEncodingBitRate(4 * 1024 * 1024);
-        } else {
+        } else if (sizePicture <= 5 * 1024 * 1024) {
             mediaRecorder.setVideoEncodingBitRate(5 * 1024 * 1024);
+        } else {
+            mediaRecorder.setVideoEncodingBitRate(sizePicture);
         }
         if (isFacingFront) {
             mediaRecorder.setOrientationHint(270);//输出旋转90度，保持竖屏录制
