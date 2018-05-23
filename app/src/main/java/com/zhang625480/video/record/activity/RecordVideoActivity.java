@@ -187,6 +187,7 @@ public class RecordVideoActivity extends Activity implements View.OnClickListene
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_CANCEL) {
                     resetData();
+
                 }
                 return true;
             }
