@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-public class Branch1 extends Activity {
+public class Branch2 extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -14,6 +14,7 @@ public class Branch1 extends Activity {
     }
 
     private void a(){
+
 
         int aa;
     }
