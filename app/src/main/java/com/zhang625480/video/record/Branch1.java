@@ -12,4 +12,28 @@ public class Branch1 extends Activity {
 
 
     }
+
+    private void a(){
+
+
+        int a;
+        int b;
+    }
+
+    private void b(){
+        int bb;
+
+    }
+
+    private void c(){
+
+        int cc;
+    }
+
+    private void d(){
+
+        int dd;
+    }
+
+
 }
